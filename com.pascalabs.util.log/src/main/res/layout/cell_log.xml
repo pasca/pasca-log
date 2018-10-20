@@ -6,7 +6,6 @@
     android:gravity="center_vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin" >
-
     <TextView
         android:id="@+id/logtype"
         style="@style/textLarge"
@@ -18,7 +17,6 @@
         android:padding="3dp"
         android:textStyle="bold"
         android:layout_margin="6dp"/>
-
     <TextView
         android:id="@+id/logevent"
         style="@style/textSmall"
@@ -29,8 +27,6 @@
         android:maxLines="2"
         android:ellipsize="end"
         android:textColor="@color/Black" />
-
-
     <TextView
         android:id="@+id/logdate"
         style="@style/textSmall"
@@ -39,5 +35,4 @@
         android:textColor="@color/DarkGreen"
         android:gravity="center"
         android:padding="10dp" />
-
 </LinearLayout>
