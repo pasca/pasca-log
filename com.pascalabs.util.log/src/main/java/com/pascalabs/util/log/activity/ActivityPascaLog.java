@@ -126,8 +126,10 @@ public class ActivityPascaLog extends Activity implements AbsListView.OnScrollLi
 
         @Override
         public void onItemClick(AdapterView<?> arg0, View arg1, int pos, long arg3) {
-            tvDetail.setText( mLog.get(pos).getEvent());
+            if(mLog.get(pos).getEvent() != null){
+            tvDetail.setText(mLog.get(pos).getEvent());
             SVLogDetail.setVisibility(View.VISIBLE);
+            }
         }
     };
 
