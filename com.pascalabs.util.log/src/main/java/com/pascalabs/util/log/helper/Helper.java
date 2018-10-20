@@ -11,8 +11,10 @@ import java.util.Date;
 public class Helper {
 
 	public static void setEmailAndAddressForSendLogReport(Context ctx, String email, String subject){
+		if(ctx != null){
 		Preference.getInstance(ctx).saveEmailAddressSaved(email);
 		Preference.getInstance(ctx).saveEmailSubjectSaved(subject);
+		}
 	}
 
 	public static void logEventLocal(Context ctx, String type, String event){
