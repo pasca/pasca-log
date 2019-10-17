@@ -33,6 +33,7 @@ public class MainActivity extends Activity {
                 Helper.logEventLocal(MainActivity.this, "INFO", "Log 3");
                 Helper.logEventLocal(MainActivity.this, "INFO", "Log 4");
                 Helper.logEventLocal(MainActivity.this, "INFO", "Log 5");
+                Helper.logEventLocal(MainActivity.this, "INFO", "Log 6");
 
                 startActivity(new Intent(MainActivity.this, ActivityPascaLog.class));
 
