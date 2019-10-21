@@ -15,3 +15,17 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-keepattributes Signature
+-keepattributes *Annotation*
+
+-dontskipnonpubliclibraryclassmembers
+
+-dontwarn org.apache.**
+-dontwarn roboguice.activity.**
+-dontwarn roboguice.test.**
+-dontwarn roboguice.test.shadow.**
+-dontwarn com.squareup.picasso.**
+-dontwarn org.joda.**
+-dontwarn com.actionbarsherlock.internal.view.menu.ActionMenuView$LayoutParams
+-dontwarn com.google.android.gms.**
+-dontwarn okio.**
