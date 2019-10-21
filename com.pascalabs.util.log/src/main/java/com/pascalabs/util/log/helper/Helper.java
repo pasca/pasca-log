@@ -30,6 +30,21 @@ public class Helper {
 			Preference.getInstance(ctx).saveLogTrackerSaved(templog);
 		} catch (Exception e) {}
 	}
+	
+	
+	private void reduceChoreographerSkippedFramesWarningThreshold() {
+	    if (BuildConfig.DEBUG) {
+		Field field = null;
+		try {
+		    field = Choreographer.class.getDeclaredField("SKIPPED_FRAME_WARNING_LIMIT");
+		    field.setAccessible(true);
+		    field.setInt(field, field.getModifiers() & ~Modifier.FINAL);
+		    field.set(null, 5);
+		} catch (Throwable e) {
+		    Log.e(TAG, "failed to change choreographer's skipped frames threshold");
+		}
+	    }
+	}
 
 	public static void logThisAPI(Context ctx, BeanLogAPI api){
 		try {
