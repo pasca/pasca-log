@@ -1,0 +1,35 @@
+
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.filters.LargeTest
+import com.iapps.aby.ui.BaseUITest
+import org.junit.After
+import org.junit.Before
+import org.junit.Test
+import org.junit.runner.RunWith
+
+@RunWith(AndroidJUnit4::class)
+@LargeTest
+class LogTest1 : BaseUITest() {
+
+    val fragToTest = FragmentLog()
+
+    override fun isMockServerEnabled(): Boolean = false
+
+    @Before
+    override fun setUp(){
+        super.setUp()
+    }
+
+    @After
+    override fun tearDown() {
+        super.tearDown()
+    }
+
+    @Test
+    fun testOpenFragment() {
+
+        launchFragment(fragToTest)
+
+    }
+
+}
