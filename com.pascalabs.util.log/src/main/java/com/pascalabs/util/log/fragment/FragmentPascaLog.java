@@ -167,6 +167,26 @@ public class FragmentPascaLog
             } catch (Exception e) {
                 Toast.makeText(getActivity(), "Please set your email address", Toast.LENGTH_SHORT).show();
             }
+        }else if(view.getId() == 0){
+            try {
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("message/rfc822");
+           
+                i.putExtra(Intent.EXTRA_TEXT   , tvDetail.getText().toString());
+                try {
+                    startActivity(Intent.createChooser(i, "Send mail"));
+                } catch (android.content.ActivityNotFoundException ex) {
+                    Toast.makeText(getActivity(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                }
+            } catch (Exception e) {
+                Toast.makeText(getActivity(), "Please set your email address", Toast.LENGTH_SHORT).show();
+            }
+        }else if(view.getId() == 2){
+             try {
+                mLog = new ArrayList<BeanLog>();
+                Preference.getInstance(getActivity()).saveLogTrackerSaved(mLog);
+                callApi();
+            } catch (Exception e) {}
         }
     }
 }
